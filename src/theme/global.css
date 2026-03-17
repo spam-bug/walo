@@ -32,8 +32,8 @@
   --color-warning: #f59e0b;
   --color-neutral: #6b7280;
 
-  /* Radius */
-  --radius-sm: 0.375rem;
+  /* application-specific radius tokens — prefixed to avoid TW defaults */
+  --radius-app-sm: 0.375rem;
   --radius-card: 1rem;
   --radius-pill: 9999px;
 
@@ -42,7 +42,25 @@
   --shadow-modal: 0 10px 25px -5px rgb(0 0 0 / 0.15);
 }
 
+/* Ionic variable overrides — intentionally unlayered to override Ionic's @layer defaults */
+:root {
+  color-scheme: light;
+  --ion-color-primary: var(--color-primary-600);
+  --ion-color-primary-shade: var(--color-primary-700);
+  --ion-color-primary-tint: var(--color-primary-500);
+  --ion-color-primary-rgb: 22, 163, 74;
+  --ion-background-color: var(--color-bg);
+  --ion-background-color-rgb: 255, 255, 255;
+  --ion-text-color: var(--color-text-primary);
+  --ion-border-color: var(--color-border);
+  --ion-item-background: var(--color-surface);
+  --ion-toolbar-background: var(--color-surface);
+  --ion-card-background: var(--color-surface);
+}
+
+/* Ionic variable overrides — intentionally unlayered to override Ionic's @layer defaults */
 [data-theme="dark"] {
+  color-scheme: dark;
   --color-bg: #0f172a;
   --color-surface: #1e293b;
   --color-surface-raised: #273549;
@@ -55,19 +73,8 @@
   --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.4);
   --shadow-modal: 0 10px 25px -5px rgb(0 0 0 / 0.5);
   --ion-background-color-rgb: 15, 23, 42;
-  --ion-color-step-50: #1e293b;
-  --ion-color-step-100: #273549;
-}
-
-:root {
-  --ion-color-primary: var(--color-primary-600);
-  --ion-color-primary-shade: var(--color-primary-700);
-  --ion-color-primary-tint: var(--color-primary-500);
-  --ion-background-color: var(--color-bg);
-  --ion-background-color-rgb: 255, 255, 255;
-  --ion-text-color: var(--color-text-primary);
-  --ion-border-color: var(--color-border);
-  --ion-item-background: var(--color-surface);
   --ion-toolbar-background: var(--color-surface);
-  --ion-card-background: var(--color-surface);
+  --ion-tab-bar-background: var(--color-surface);
+  --ion-toolbar-border-color: var(--color-border);
+  --ion-tab-bar-border-color: var(--color-border);
 }
